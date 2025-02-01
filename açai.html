@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Seu Açaí - Sua Marca</title>
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --dark: #2D3436;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 15px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+            max-width: 60%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin: 0 0 15px 0;
+            color: var(--dark);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            -webkit-appearance: none;
+        }
+
+        select[multiple] {
+            height: 150px;
+            padding: 5px;
+        }
+
+        select[multiple] option:checked {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        option {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            margin: 20px 0 10px 0;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ff5252;
+        }
+
+        .total-pedido {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: right;
+            padding: 15px;
+            border-top: 2px solid var(--primary);
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            select[multiple] {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo da Marca" class="logo">
+        
+        <!-- Seleção de Sabores -->
+        <div class="grid">
+            <div class="card">
+                <h2>🍨 Escolha 2 Sabores</h2>
+                <select id="sabor1">
+                    <option value="Cuptacu">Cuptacu</option>
+                    <option value="Energetico">Energetico</option>
+                    <option value="Creme de ninho">Creme de ninho</option>
+                    <option value="Creme de oreo">Creme de oreo</option>
+                    <option value="Açai mesclado">Açai mesclado</option>
+                    <option value="Açai">Açai</option>
+                    <option value="Creme de tapioca">Creme de tapioca</option>
+                    <option value="Creme de ovomaltine">Creme de ovomaltine</option>
+                    <option value="Creme de morango">Creme de morango</option>
+                    <option value="Ninho trufado">Ninho trufado</option>
+                </select>
+                <select id="sabor2">
+                    <option value="Cuptacu">Cuptacu</option>
+                    <option value="Energetico">Energetico</option>
+                    <option value="Creme de ninho">Creme de ninho</option>
+                    <option value="Creme de oreo">Creme de oreo</option>
+                    <option value="Açai mesclado">Açai mesclado</option>
+                    <option value="Açai">Açai</option>
+                    <option value="Creme de tapioca">Creme de tapioca</option>
+                    <option value="Creme de ovomaltine">Creme de ovomaltine</option>
+                    <option value="Creme de morango">Creme de morango</option>
+                    <option value="Ninho trufado">Ninho trufado</option>
+                </select>
+            </div>
+
+            <!-- Seleção de Tamanho -->
+            <div class="card">
+                <h2>📏 Tamanho</h2>
+                <select id="size">
+                    <option value="150ml">150ml - R$5,00</option>
+                    <option value="200ml">200ml - R$8,00</option>
+                    <option value="250ml">250ml - R$9,00</option>
+                    <option value="350ml">350ml - R$11,00</option>
+                    <option value="500ml">500ml - R$17,00</option>
+                    <option value="1lt">1 litro - R$30,00</option>
+                    <option value="Barca P">Barca P - R$20,00</option>
+                    <option value="Barca G">Barca G - R$30,00</option>
+                    <option value="Hamburgueira P">Hamburgueira P - R$10,00</option>
+                    <option value="Hamburgueira M">Hamburgueira M - R$11,00</option>
+                    <option value="Hamburgueira G">Hamburgueira G - R$17,00</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Caldas -->
+        <div class="card">
+            <h2>🍯 Caldas</h2>
+            <select id="calda">
+                <option value="calda de uva">Calda de Uva</option>
+                <option value="calda de morango">Calda de Morango</option>
+                <option value="calda de menta">Calda de Menta</option>
+                <option value="leite condensado">Leite Condensado</option>
+                <option value="calda de chocolate">Calda de Chocolate</option>
+                <option value="calda caramelo">Calda de Caramelo</option>
+            </select>
+        </div>
+
+        <!-- Adicionais -->
+        <div class="card">
+            <h2>✨ Adicionais (+ R$2,00 cada)</h2>
+            <select id="adicionais" multiple>
+                <option value="granola">Granola</option>
+                <option value="uva">Uva</option>
+                <option value="oreo">Oreo</option>
+                <option value="gotas de choc. b.">Gotas de Chocolate Branco</option>
+                <option value="banana">Banana</option>
+                <option value="cereais">Cereais</option>
+                <option value="gotas de choc.">Gotas de Chocolate</option>
+                <option value="castanha">Castanha</option>
+                <option value="canudos">Canudos</option>
+                <option value="xerem de amendoim">Xerém de Amendoim</option>
+                <option value="kitkat">KitKat</option>
+                <option value="nutella">Nutella</option>
+                <option value="granulado">Granulado</option>
+                <option value="baton">Baton</option>
+                <option value="pagoca">Paçoca</option>
+                <option value="flocos de aveia">Flocos de Aveia</option>
+                <option value="serenata">Serenata</option>
+                <option value="leite em pó">Leite em Pó</option>
+                <option value="fini">Fini</option>
+                <option value="coco ralado">Coco Ralado</option>
+                <option value="chocopower ball">ChocoPower Ball</option>
+                <option value="beijinho de colher">Beijinho de Colher</option>
+                <option value="flocos de arroz">Flocos de Arroz</option>
+                <option value="mm">M&M</option>
+                <option value="marshmello">Marshmello</option>
+                <option value="farinha lactea">Farinha Láctea</option>
+                <option value="jujuba">Jujuba</option>
+                <option value="ovomaltine">Ovomaltine</option>
+                <option value="nutella (Choco. branco)">Nutella (Chocolate Branco)</option>
+                <option value="doce de leite">Doce de Leite</option>
+                <option value="brigadeiro">Brigadeiro</option>
+                <option value="beij. colher s. morang.">Beijinho de Colher com Morango</option>
+                <option value="cereais de nescau">Cereais de Nescau</option>
+                <option value="brigadeiro branco">Brigadeiro Branco</option>
+            </select>
+        </div>
+
+        <!-- Informações do Pedido -->
+        <div class="card">
+            <h2>📋 Informações</h2>
+            <input type="text" id="nome" placeholder="Seu nome completo" required>
+            <select id="viagem">
+                <option value="Sim">Para Viagem</option>
+                <option value="Não" selected>Consumo no Local</option>
+            </select>
+        </div>
+
+        <!-- Total do Pedido -->
+        <div class="total-pedido">
+            TOTAL: <span id="total-pedido">R$ 0,00</span>
+        </div>
+
+        <button class="submit-btn" onclick="enviarPedido(event)">🛒 Enviar Pedido</button>
+    </div>
+
+    <script>
+        // Configurações de preços
+        const config = {
+            precosTamanho: {
+                '150ml': 5.00,
+                '200ml': 8.00,
+                '250ml': 9.00,
+                '350ml': 11.00,
+                '500ml': 17.00,
+                '1lt': 30.00,
+                'Barca P': 20.00,
+                'Barca G': 30.00,
+                'Hamburgueira P': 10.00,
+                'Hamburgueira M': 11.00,
+                'Hamburgueira G': 17.00
+            },
+            precoAdicional: 2.00,
+            numeroWhatsApp: '5584999805340'
+        };
+
+        // Elementos DOM
+        const elementos = {
+            size: document.getElementById('size'),
+            adicionais: document.getElementById('adicionais'),
+            totalPedido: document.getElementById('total-pedido'),
+            nome: document.getElementById('nome'),
+            sabor1: document.getElementById('sabor1'),
+            sabor2: document.getElementById('sabor2'),
+            calda: document.getElementById('calda'),
+            viagem: document.getElementById('viagem')
+        };
+
+        // Funções
+        const calcularTotal = () => {
+            const valorTamanho = config.precosTamanho[elementos.size.value] || 0;
+            const qtdAdicionais = elementos.adicionais.selectedOptions.length;
+            const total = valorTamanho + (qtdAdicionais * config.precoAdicional);
+            
+            elementos.totalPedido.textContent = total.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            });
+            
+            return total;
+        };
+
+        const validarPedido = () => {
+            if(!elementos.nome.value.trim()) {
+                alert('Por favor, digite seu nome!');
+                return false;
+            }
+            if(elementos.sabor1.value === elementos.sabor2.value) {
+                alert('Selecione dois sabores diferentes!');
+                return false;
+            }
+            return true;
+        };
+
+        const enviarPedido = (event) => {
+            event.preventDefault();
+            
+            if(!validarPedido()) return;
+
+            try {
+                const adicionais = Array.from(elementos.adicionais.selectedOptions)
+                    .map(option => option.value);
+                
+                const mensagem = [
+                    `*PEDIDO - ${elementos.nome.value}*`,
+                    '',
+                    `🍨 *Sabores:* ${elementos.sabor1.value} + ${elementos.sabor2.value}`,
+                    `📏 *Tamanho:* ${elementos.size.value} (${config.precosTamanho[elementos.size.value].toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})})`,
+                    `🍯 *Calda:* ${elementos.calda.value}`,
+                    `✨ *Adicionais (${adicionais.length}x):* ${adicionais.join(', ') || 'Nenhum'} (${(adicionais.length * config.precoAdicional).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})})`,
+                    `📍 *Viagem:* ${elementos.viagem.value}`,
+                    '',
+                    `💵 *TOTAL: ${calcularTotal().toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}*`
+                ].join('\n');
+
+                const url = `https://wa.me/${config.numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+                window.open(url, '_blank');
+
+            } catch (error) {
+                alert(`Erro: ${error.message}`);
+            }
+        };
+
+        // Event Listeners
+        elementos.size.addEventListener('change', calcularTotal);
+        elementos.adicionais.addEventListener('change', calcularTotal);
+
+        // Inicialização
+        calcularTotal();
+    </script>
+</body>
+</html>
